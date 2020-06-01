@@ -64,4 +64,46 @@ CREATE TABLE gallery (
   );
 
 
+insert into brd (title, userid, contents)
+VALUES ('테스트입니다','xyz987','아잉~냉무');
+
+insert into brd (title, userid, contents)
+VALUES ('시험용데이터입니다','abc456','제곧내~');
+
+insert into brd (title, userid, contents)
+VALUES ('연습용입니다','stu642','');
+
+
+
+-- 페이징 SQL 문 : limit by
+-- 첫 번째 게시문을 기준으로
+-- 10-1 만큼 게시물을 추출해서 출력
+
+SELECT bno,title,userid,regdate,views from brd
+order by bno desc limit 0, 10; -- 1page
+
+SELECT bno,title,userid,regdate,views from brd
+order by bno desc limit 10, 10; -- 2page
+
+SELECT bno,title,userid,regdate,views from brd
+order by bno desc limit 20, 10; -- 3page
+
+
+-- SELECT bno,title,userid,regdate,views from brd
+-- order by bno desc limit startNum, 10
+-- cp : 1, perPage : 10
+-- startNum? : startNum = (cp - 1) * perPage
+
+SELECT count(bno) bdcnt from brd;
+
+
+
+
+
+
+
+
+
+
+
 
