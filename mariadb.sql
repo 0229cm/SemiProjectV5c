@@ -97,6 +97,20 @@ order by bno desc limit 20, 10; -- 3page
 SELECT count(bno) bdcnt from brd;
 
 
+-- zipcode : 지번주소 (총 52144건)
+CREATE TABLE zipcode (
+ zipcode VARCHAR (7),
+ sido VARCHAR (10),
+ gugun VARCHAR (25),
+ dong VARCHAR (35),
+ ri VARCHAR (50),
+ bunji VARCHAR (25),
+ seq VARCHAR (5)
+);
+
+SELECT * from zipcode
+where dong like '충신동';
+
 
 
 

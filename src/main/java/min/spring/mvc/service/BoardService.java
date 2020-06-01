@@ -43,4 +43,9 @@ public class BoardService {
         return bdao.selectCountBoard();
 
     }
+
+    // 특정 게시글 삭제하기
+    public void removeBoard(String bno) {
+        bdao.deleteBoard(bno);
+    }
 }
