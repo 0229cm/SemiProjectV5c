@@ -28,6 +28,10 @@ public class GalleryController {
         mv.setViewName("layout/layout"); // 뷰이름 지정
         mv.addObject("action", "../gallery/list.jsp");
 
+        // 뷰로 넘길 데이터를 modelandview 객체에 담음
+
+        mv.addObject("glist", gsrv.showGallery());
+
         return mv;
     }
 
@@ -40,6 +44,8 @@ public class GalleryController {
         mv.setViewName("layout/layout"); // 뷰이름 지정
 
         mv.addObject("action", "../gallery/write.jsp");
+
+
 
         return mv;
 
@@ -62,12 +68,15 @@ public class GalleryController {
     }
 
     @RequestMapping(value = "gallery/view")
-    public ModelAndView view() {
+    public ModelAndView view(String gno) {
 
         ModelAndView mv = new ModelAndView();
 
         mv.setViewName("layout/layout"); // 뷰이름 지정
+
         mv.addObject("action", "../gallery/view.jsp");
+
+        mv.addObject("g", gsrv.showOneGallery(gno));
 
         return mv;
     }
