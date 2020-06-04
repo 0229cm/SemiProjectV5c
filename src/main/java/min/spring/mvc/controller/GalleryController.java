@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -45,10 +46,16 @@ public class GalleryController {
 
     }
 
+    // 새글쓰기
+    // 여러개의 이미지를 업로드하는 경우
+    // 이미지 폼 이름은 모두 동일하게 설정
+    // MultipartFile[] img1, MultipartFile[] img2,
+    // MultipartFile[] img3 식으로 사용하는 것보다는
+    // => MultipartFile[] img 식으로 사용하는 것이 더 편하기 때문임
     @PostMapping(value = "gallery/write")
-    public String wirteok (GalleryVO gvo) {
+    public String wirteok (GalleryVO gvo, MultipartFile[] img) {
 
-        gsrv.newGallery(gvo);
+        gsrv.newGallery(gvo, img);
 
         return "redirect:/gallery/list";
 
