@@ -83,12 +83,22 @@
 
         <div class="row margin1050">
             <div class="col-12 text-right">
+        <c:if test="${empty UID}">
                 <button type="button" id="newbd"
-                        class="btn btn-light">
+                        class="btn btn-light" disabled>
                     <i class="fa fa-plus-circle"> </i>
                     새글쓰기
                 </button>
             </div>
+            </c:if>
+            <c:if test="${not empty UID}">
+            <button type="button" id="newbd"
+                            class="btn btn-light" >
+                        <i class="fa fa-plus-circle"> </i>
+                        새글쓰기
+                    </button>
+                </div>
+                </c:if>
         </div><!-- 버튼들 -->
 
         <div class="row margin1050">

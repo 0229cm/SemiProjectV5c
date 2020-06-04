@@ -16,9 +16,11 @@ $('#bdregbtn').on('click', function () {
     }
 }); // 새글등록
 
+
 $('#newbd').on('click', function () {
     location.href = '/board/write.do';
 }); // 새글쓰기
+
 
 $('#lstbd').on('click', function () {
     location.href = '/board/list.do';
